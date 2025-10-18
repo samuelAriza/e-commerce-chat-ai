@@ -6,7 +6,7 @@ Sistema de e-commerce con asistente de chat inteligente impulsado por **Google G
 
 Aplicación que combina un catálogo de productos de calzado con un asistente virtual inteligente. Los usuarios pueden consultar sobre productos, obtener recomendaciones y recibir respuestas contextualizadas basadas en el historial conversacional de su sesión.
 
-El sistema mantiene el contexto de las últimas 6 interacciones por sesión para generar respuestas coherentes y personalizadas. Utiliza Google Gemini AI (modelo `gemini-2.0-flash`) para procesar consultas y generar respuestas naturales sobre el catálogo de productos disponibles.
+El sistema mantiene el contexto de las últimas conversaciones por sesión para generar respuestas coherentes y personalizadas. Utiliza Google Gemini AI (modelo `gemini-2.0-flash`) para procesar consultas y generar respuestas naturales sobre el catálogo de productos disponibles.
 
 Implementa **Clean Architecture** con separación clara entre capas de dominio, aplicación e infraestructura, facilitando el mantenimiento y las pruebas unitarias.
 
