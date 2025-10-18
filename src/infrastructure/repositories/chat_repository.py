@@ -82,12 +82,12 @@ class SQLChatRepository(IChatRepository):
             query = (
                 self.db.query(ChatMemoryModel)
                 .filter(ChatMemoryModel.session_id == session_id)
-                .order_by(ChatMemoryModel.timestamp.asc())  # ✅ primero ordenamos
+                .order_by(ChatMemoryModel.timestamp.asc())
             )
             
             # Aplicar limit si se especifica (después del order_by)
             if limit is not None:
-                query = query.limit(limit)  # ✅ ahora sí aplicamos el límite
+                query = query.limit(limit)  
             
             # Ejecutar consulta
             message_models = query.all()

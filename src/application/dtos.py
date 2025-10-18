@@ -1,4 +1,4 @@
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel, ConfigDict, field_validator
 from typing import Optional
 from datetime import datetime
 
@@ -18,6 +18,18 @@ class ProductDTO(BaseModel):
     price: float
     stock: int
     description: str
+    
+    model_config = ConfigDict(from_attributes=True)
+    
+    @property
+    def is_available(self) -> bool:
+        """
+        Indica si el producto está disponible en stock.
+        
+        Returns:
+            bool: True si el stock es mayor a 0, False en caso contrario.
+        """
+        return self.stock > 0
     
     @field_validator('price')
     @classmethod
@@ -50,11 +62,6 @@ class ProductDTO(BaseModel):
         if v < 0:
             raise ValueError("El stock no puede ser negativo")
         return v
-    
-    class Config:
-        """Configuración de Pydantic"""
-        from_attributes = True  # Permite crear DTOs desde objetos ORM
-
 
 class ChatMessageRequestDTO(BaseModel):
     """
@@ -124,6 +131,4 @@ class ChatHistoryDTO(BaseModel):
     message: str
     timestamp: datetime
     
-    class Config:
-        """Configuración de Pydantic"""
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
