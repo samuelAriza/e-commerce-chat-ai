@@ -637,13 +637,6 @@ El sistema carga automáticamente 10 productos en el primer arranque:
 | 9 | Nike ZoomX Vaporfly | Nike | Running | $199.99 | 5 |
 | 10 | Adidas Superstar | Adidas | Casual | $79.99 | 28 |
 
-## Contribución
-
-[Información no disponible en el código]
-
-## Licencia
-
-[Información no disponible en el código]
 
 ---
 
